@@ -32,7 +32,7 @@ id: 2018112701
 我不得不不承认："example.com" 比"www.example.com" 更短，所以读、写都更便捷。 所以人们开始放弃"www"部分，只是输入原地址，这样也更容易理解。
 
 ### 为什么加不加www还是一个问题？
-为什么我们还在讨论这个问题，人们不能只使用他们喜欢的东西吗，and the rest of us leave them to it?
+为什么我们还在讨论这个问题，人们不能根据自己的喜好来决定是否要加www前缀嘛?
 是的，当然可以。
 但你看，如果你是一个网站管理员，你要考虑清楚再做决定。因为与互联网上的大多数事情一样，当我们开始使用它们时，并非所有事情都被考虑过，比如cookies。
 
@@ -47,9 +47,6 @@ id: 2018112701
 ### 不必要的 cookie 会影响性能
 
 http 和 cookie 的工作方式是这样的, cookie会从浏览器发送至web服务器（每个请求都会发送）。这意味着, 如果你的网站对原点设置了 cookie ("example..com"  ), 则此cookie属性还会向发送给"email.example.com"   或 "intranet.example.com"  的请求一起提交 。这会减慢通信速度, 用户体验更差。
-
-本段落可能翻译的不好，附上原文:
-> The way HTTP and cookies work, is that they are sent from the browser for each and every request to the web server. This means that if your website sets a cookie for the origin ("example.com" ) this cookie will also have to be sent to every request that you make to e.g. "email.example.com"  or "intranet.example.com" . This slows down the communication and leaves your with a worse user experience.
 
 
 ### Cookie可以由第三方阅读。 
