@@ -39,8 +39,8 @@ table.gridtable td {
 <table id='tb_table'  border="1" class='gridtable'>
 <thead><td><b>姓名</b></td><td><b>检查结果</b></td><td><b>接龙内容</b></td></thead>
 <tr><td>戴睿琦</td><td>未报名</td><td  valign="top" rowspan="200" width="200px"> 
-	<input type="button" name="" value="清除内容" onclick="delTextArea();" style="width:200px; height:50px;">
-		<input type="button" name="" value="检查" onclick="checkNames();" style="width:200px; height:50px;">
+	<input type="button" name="" value="清除接龙内容" onclick="delTextArea();" style="width:200px; height:50px;">
+		<input type="button" name="" value="开始检查" onclick="checkNames();" style="width:200px; height:50px;">
 	<textarea id='textarea' cols="25" rows="60" style='margin-top: 0px' onchange="checkNames()">	
 	#接龙
 2020/05/01
@@ -69,7 +69,7 @@ table.gridtable td {
 22. 竺金辰 无变化 无发烧
 23. 许文彤 无变化 无发烧
 24. 江玥琳 无变化 无发烧
-24. 江玥琳 无变化 无发烧
+24. 俞悦 无变化 无发烧
 	</textarea>
 </td>
 
@@ -143,7 +143,7 @@ table.gridtable td {
 
 		function delTextArea(){
 
-			document.getElementById("textarea").value = "";
+			document.getElementById("textarea").value = "接龙内容 请粘贴 到这里 ";
 
 		  var table = document.getElementById("tb_table");
 		  var rows = table.rows;//获取所有行
