@@ -37,9 +37,11 @@ table.gridtable td {
 <body>
 
 <table id='tb_table'  border="1" class='gridtable'>
-<thead><td><b>姓名</b></td><td><b>检查结果</b></td><td><b>接龙内容</b></td><td><b>操作</b></td></thead>
+<thead><td><b>姓名</b></td><td><b>检查结果</b></td><td><b>接龙内容</b></td></thead>
 <tr><td>戴睿琦</td><td>未报名</td><td  valign="top" rowspan="200" width="200px"> 
-	<textarea id='textarea' cols="25" rows="60" style='margin-top: 0px'>	
+	<input type="button" name="" value="清除内容" onclick="delTextArea();" style="width:200px; height:50px;">
+		<input type="button" name="" value="检查" onclick="checkNames();" style="width:200px; height:50px;">
+	<textarea id='textarea' cols="25" rows="60" style='margin-top: 0px' onchange="checkNames()">	
 	#接龙
 2020/05/01
 
@@ -70,13 +72,7 @@ table.gridtable td {
 24. 江玥琳 无变化 无发烧
 	</textarea>
 </td>
-<td  valign="top" rowspan="200" width="20px">
-	<br><br><br>
-		<input type="button" name="" value="检查" onclick="checkNames();" style="width:200px; height:50px;">
 
-		 <br><br><br>
-		<input type="button" name="" value="清除内容" onclick="delTextArea();" style="width:200px; height:50px;">
-</td>
 
 </tr>
 <tr><td>杨梓周</td><td >未检查</td></tr>
