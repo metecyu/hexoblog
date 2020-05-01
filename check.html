@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>
+		
+	</title>
+
+
+</head>
+<body>
+
+<table id='tb_table'  border="1">
+<thead><td><b>姓名</b></td><td><b>检查结果</b></td><td><b>接龙内容</b></td><td><b>操作</b></td></thead>
+<tr><td>戴睿琦</td><td>未报名</td><td  valign="top" rowspan="200" width="200px"> 
+	<textarea id='textarea' cols="25" rows="60" style='margin-top: 0px'>	
+	#接龙
+2020/05/01
+
+1. 陈梓歆 无变化 无发烧
+2. 刘晨轩 无变化 无发烧
+3. 杨梓周 无变化 无发烧
+4. 曾彦彤 无变化 无发烧
+5. 王辰骏 无变化 无发烧
+6. 季忠源 无变化 无发烧
+7. 薛思妍 无变化 无发烧
+8. 俞悦 无变化 无发烧
+9. 戴睿琦 无变化 无发烧
+10. 王语沐 无变化 无发烧
+11. 黄语芝 无变化 无发烧
+12. 刘佳钰 无变化 无发烧
+13. 魏奕辰 无变化 无发烧
+14. 何郁清 无变化 无发烧
+15. 闾文博 无变化 无发烧
+16. 施芊伊 无变化 无发烧
+17. 方奕婷 无变化 无发烧
+18. 贾睿铭 无变化 无发烧
+19. 单宇轩 无变化 无发烧
+20. 徐宥天 无变化 无发烧
+21. 范梦安 无变化 无发烧
+22. 竺金辰 无变化 无发烧
+23. 许文彤 无变化 无发烧
+24. 江玥琳 无变化 无发烧
+24. 江玥琳 无变化 无发烧
+	</textarea>
+</td>
+<td  valign="top" rowspan="200" width="20px">
+	<br><br><br>
+		<input type="button" name="" value="检查" onclick="checkNames();"> <br><br><br>
+		<input type="button" name="" value="清除内容" onclick="delTextArea();">
+</td>
+
+</tr>
+<tr><td>杨梓周</td><td >未检查</td></tr>
+<tr><td>曾彦彤</td><td>未检查</td></tr>
+<tr><td>陈梓歆</td><td>未检查</td></tr>
+<tr><td>黄语芝</td><td>未检查</td></tr>
+<tr><td>许文彤</td><td>未检查</td></tr>
+<tr><td>贾睿铭</td><td>未检查</td></tr>
+<tr><td>季忠源</td><td>未检查</td></tr>
+<tr><td>叶迪庐</td><td>未检查</td></tr>
+<tr><td>麦迪沈斯恺</td><td>未检查</td></tr>
+<tr><td>杨鸿辰</td><td>未检查</td></tr>
+<tr><td>薛思妍</td><td>未检查</td></tr>
+<tr><td>刘佳钰</td><td>未检查</td></tr>
+<tr><td>汤弋诺</td><td>未检查</td></tr>
+<tr><td>俞悦</td><td>未检查</td></tr>
+<tr><td>范梦安</td><td>未检查</td></tr>
+<tr><td>王语沐</td><td>未检查</td></tr>
+<tr><td>江玥琳</td><td>未检查</td></tr>
+<tr><td>何郁清</td><td>未检查</td></tr>
+<tr><td>魏奕辰</td><td>未检查</td></tr>
+<tr><td>刘晨轩</td><td>未检查</td></tr>
+<tr><td>闾文博</td><td>未检查</td></tr>
+<tr><td>方奕婷</td><td>未检查</td></tr>
+<tr><td>张逸宸</td><td>未检查</td></tr>
+<tr><td>徐宥天</td><td>未检查</td></tr>
+<tr><td>王辰骏</td><td>未检查</td></tr>
+<tr><td>毛雨馨</td><td>未检查</td></tr>
+<tr><td>施芊伊</td><td>未检查</td></tr>
+<tr><td>单宇轩</td><td>未检查</td></tr>
+<tr><td>竺金辰</td><td>未检查</td></tr>
+	
+</table>
+</body>
+
+
+
+	<script type="text/javascript">
+		function countSubstr(str, substr) {
+				 var reg = new RegExp(substr, "g");
+				 return str.match(reg) ? str.match(reg).length : 0;//若match返回不为null，则结果为true，输出match返回的数组(["test","test"])的长度
+			}
+
+
+		
+		function checkNames(){
+		  var textareaContent = document.getElementById("textarea").value;
+
+		  var table = document.getElementById("tb_table");
+		  var rows = table.rows;//获取所有行
+		  console.log("lenth",rows.length) //
+		  for(var i=1; i < rows.length; i++){
+		    var row = rows[i];//获取每一行
+		    var studentName = row.cells[0].innerHTML;//获取具体单元格
+
+ 			var findNum = countSubstr(textareaContent,studentName);
+ 			if(findNum ==1 ){
+ 				row.cells[1].innerHTML = "";
+ 			}else  if(findNum >1 ){
+ 				row.cells[1].innerHTML = "<span style='color:orange'>重复报名</span>";
+ 			}else{
+				row.cells[1].innerHTML = "<span style='color:red'>未报名</span>";
+ 			}
+		    console.log("id",studentName,findNum)
+
+		  }
+		}
+
+		function delTextArea(){
+
+			document.getElementById("textarea").value = "";
+
+		  var table = document.getElementById("tb_table");
+		  var rows = table.rows;//获取所有行
+		  console.log("lenth",rows.length) //
+		  for(var i=1; i < rows.length; i++){
+		    var row = rows[i];//获取每一行
+			row.cells[1].innerHTML = "<span style='color:black'>未检查</span>";	
+	
+
+		  }
+
+		}
+
+
+			
+			/*console.log("str:111")
+			var str = countSubstr("aaaa","aa");
+			console.log("str:",str)
+
+			
+			console.log("textarea:",)*/
+		</script>
+</html>
+
